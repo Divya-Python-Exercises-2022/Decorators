@@ -3,7 +3,10 @@ def verbose(func):
         a = args[0]
         b = args[1]
         c = func(a, b)
-        return print(f'sum_two invoked with ({a,b}) -> {c}')
+        #d = a, b  # means d = (a, b)
+        d = a, b, c
+        # return print(f'{func.__name__} invoked with {d} -> {c}')
+        return print(f'sum_two invoked with ({a, b}) -> {c}')
 
     return wrapper
 
@@ -15,3 +18,4 @@ def sum_two(a, b):
 
 if __name__ == "__main__":
     sum_two(3, 4)
+
